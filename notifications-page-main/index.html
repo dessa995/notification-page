@@ -11,104 +11,38 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
-    <link rel="stylesheet" href="assets/fonts/plusjakartasans-variablefont_wght-webfont.woff"/>
-    <link rel="stylesheet" href="assets/fonts/plusjakartasans-variablefont_wght-webfont.woff2"/>
+    <link
+      rel="stylesheet"
+      href="assets/fonts/plusjakartasans-variablefont_wght-webfont.woff"
+    />
+    <link
+      rel="stylesheet"
+      href="assets/fonts/plusjakartasans-variablefont_wght-webfont.woff2"
+    />
     <link rel="stylesheet" href="assets/styles/style.css" />
 
     <title>Frontend Mentor | Notifications page</title>
   </head>
   <body>
-
     <div class="page-container">
-
       <div class="notification-heading">
-        <div class="num-of-notifications"><h1 class="heading">Notifications</h1><span id="NotificationBadge" class="badge">3</span></div>
-      <div class="mark-as-read">Mark all as read</div>
-      </div>
-
-      <div class="notifications-container">
-
-      <div class="the-notification not-read">
-        <a class="all-notification-text">
-          <span class="user">Mark Webber</span> reacted to your recent post <span class="notification-link">My first tournament today!</span>
-        </a>
-        <p class="notification-time">
-          1m ago
-        </p>
-      </div>
-
-      <div class="the-notification not-read">
-        <a class="all-notification-text">
-          <span class="user">Angela Gray</span> followed you 
-        </a>
-        <p class="notification-time">
-          5m ago 
-        </p>
-      </div>
-
-      <div class="the-notification not-read">  
-        <a class="all-notification-text">
-          <span class="user">Jacob Thompson</span> has joined your group
-          <span class="chess-club-link">Chess Club</span> 
-        </a>
-        <p class="notification-time">
-          1 day ago
-        </p>
-      </div>
-
-      <div class="the-notification read">
-        <a class="all-notification-text">
-          <span class="user">Rizky Hasanuddin</span> sent you a private message 
-        </p>
-        <p class="notification-time">
-          5 days ago
-        </p>
-
-        <div class="user-message">
-          Hello, thanks for
-          setting up the Chess Club. I've been a member for a few weeks now and
-          I'm already having lots of fun and improving my game.
+        <div class="num-of-notifications">
+          <h1 class="heading">Notifications</h1>
+          <span id="NotificationBadge" class="badge"></span>
         </div>
+
+        <div class="mark-as-read">Mark all as read</div>
       </div>
 
-      <div class="the-notification read">
-        <a class="all-notification-text">
-          <span class="user">Kimberly Smith</span> commented on your picture 
-        </a>
-        <p class="notification-time">
-          1 week ago
-        </p>
-      </div>
-
-      <div class="the-notification read">
-        <a class="all-notification-text">
-          <span class="user">Nathan Peterson</span> reacted to your recent post 
-          <span class="notification-link">5 end-game strategies to increase your win rate</span>
-        </a>
-        <p class="notification-time">
-          2 weeks ago
-        </p>
-      </div>
-
-      <div class="the-notification read">
-        <a class="all-notification-text">
-          <span class="user">Anna Kim</span> left the group <span class="chess-club-link">Chess Club</span> 
-        </a>
-        <p class="notification-time">
-          2 weeks ago
-        </p>
-      </div>
-
+      <div class="notifications-container"></div>
     </div>
 
-  </div>
-
-    
     <div class="attribution">
       <footer>
         Challenge by
-        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-        Coded by <a href="#">Desimir Popović</a>.
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Desimir Popović</a>.
       </footer>
       <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
       <script src="assets/scripts/index.js"></script>
