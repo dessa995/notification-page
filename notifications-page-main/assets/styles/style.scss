@@ -76,20 +76,23 @@
 
 .all-text-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   text-align: left;
   padding: 0px 15px;
 }
 
 .not-read {
   background-color: #d2eafc69;
-  .all-text-container:after {
+  .all-text-container::before {
     content: "";
     display: inline;
+    order: 1;
     width: 10px;
     height: 10px;
     border-radius: 50%;
     background-color: #ff4944;
+    margin-right: -20px;
+    margin-bottom: -15px;
     align-self: flex-end;
   }
 }
