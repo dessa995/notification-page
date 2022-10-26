@@ -1,17 +1,13 @@
 @import "./mixins";
 
 * {
-  font-family: "plus_jakarta_sansregular";
-  src: url("../fonts/plusjakartasans-variablefont_wght-webfont.woff2")
-      format("woff2"),
-    url("../fonts/plusjakartasans-variablefont_wght-webfont.woff")
-      format("woff");
+  box-sizing: border-box;
 }
 
 .page-container {
   margin: 80px;
   border-radius: 12px;
-  max-width: 800px;
+  max-width: 735px;
   padding-bottom: 9px;
   @include autoMargin();
   @include flexCenter();
@@ -61,26 +57,95 @@
 }
 
 .notifications-container {
-  max-width: 800px;
   @include autoMargin();
   @include flexCenter();
   // border: 3px solid black;
 }
 
 .the-notification {
-  max-width: 600px;
+  position: relative;
+  display: flex;
+  max-width: 675px;
   margin: 8px 0px;
   border-radius: 10px;
   @include autoMargin();
-  @include flexCenter();
-  border: 2px solid black;
+  align-items: flex-start;
+  justify-content: left;
+  padding: 18px 18px;
+}
+
+.all-text-container {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 0px 15px;
 }
 
 .not-read {
-  background-color: #00ffffb6;
+  background-color: #d2eafc69;
+  .all-text-container:after {
+    content: "";
+    display: inline;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ff4944;
+    align-self: flex-end;
+  }
 }
 
-.read:hover, .not-read:hover {
+.read:hover,
+.not-read:hover {
   cursor: pointer;
   background-color: #1cd2d2b6;
+}
+
+.user-img-container {
+  align-self: flex-start;
+}
+
+.user-image {
+  align-self: flex-start;
+  max-width: 45px;
+}
+
+.user {
+  color: #272a32;
+  font-weight: bold;
+}
+
+.notification-text {
+  color: #73777a;
+}
+
+.notification-link {
+  color: #494e57e3;
+  font-weight: bold;
+}
+
+.chess-club-link {
+  color: #2d4a8d;
+  font-weight: bold;
+}
+
+.notification-time {
+  display: block;
+  padding: 5px 0px;
+  color: #73777aaf;
+}
+
+.user-message {
+  display: block;
+  padding: 5px 0px;
+  border: 1px solid rgba(59, 59, 59, 0.377);
+  border-radius: 4px;
+  max-width: 550px;
+  color: #73777a;
+}
+
+.post-image {
+  position: absolute;
+  right: 10px;
+  max-width: 50px;
+  align-self: right;
 }

@@ -1,12 +1,11 @@
 * {
-  font-family: "plus_jakarta_sansregular";
-  src: url("../fonts/plusjakartasans-variablefont_wght-webfont.woff2") format("woff2"), url("../fonts/plusjakartasans-variablefont_wght-webfont.woff") format("woff");
+  box-sizing: border-box;
 }
 
 .page-container {
   margin: 80px;
   border-radius: 12px;
-  max-width: 800px;
+  max-width: 735px;
   padding-bottom: 9px;
   margin-left: auto;
   margin-right: auto;
@@ -59,7 +58,6 @@
 }
 
 .notifications-container {
-  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
   justify-content: center;
@@ -68,22 +66,90 @@
 }
 
 .the-notification {
-  max-width: 600px;
+  position: relative;
+  display: flex;
+  max-width: 675px;
   margin: 8px 0px;
   border-radius: 10px;
   margin-left: auto;
   margin-right: auto;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  border: 2px solid black;
+  align-items: flex-start;
+  justify-content: left;
+  padding: 18px 18px;
+}
+
+.all-text-container {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 0px 15px;
 }
 
 .not-read {
-  background-color: rgba(0, 255, 255, 0.7137254902);
+  background-color: rgba(210, 234, 252, 0.4117647059);
+}
+.not-read .all-text-container:after {
+  content: "";
+  display: inline;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ff4944;
+  align-self: flex-end;
 }
 
-.read:hover, .not-read:hover {
+.read:hover,
+.not-read:hover {
   cursor: pointer;
   background-color: rgba(28, 210, 210, 0.7137254902);
+}
+
+.user-img-container {
+  align-self: flex-start;
+}
+
+.user-image {
+  align-self: flex-start;
+  max-width: 45px;
+}
+
+.user {
+  color: #272a32;
+  font-weight: bold;
+}
+
+.notification-text {
+  color: #73777a;
+}
+
+.notification-link {
+  color: rgba(73, 78, 87, 0.8901960784);
+  font-weight: bold;
+}
+
+.chess-club-link {
+  color: #2d4a8d;
+  font-weight: bold;
+}
+
+.notification-time {
+  display: block;
+  padding: 5px 0px;
+  color: rgba(115, 119, 122, 0.6862745098);
+}
+
+.user-message {
+  display: block;
+  padding: 5px 0px;
+  border: 1px solid rgba(59, 59, 59, 0.377);
+  border-radius: 4px;
+  max-width: 550px;
+  color: #73777a;
+}
+
+.post-image {
+  position: absolute;
+  right: 10px;
+  max-width: 50px;
+  align-self: right;
 }/*# sourceMappingURL=style.css.map */

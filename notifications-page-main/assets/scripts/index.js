@@ -50,7 +50,7 @@ $(document).ready(function () {
       userImg: rizkyHasanuddin,
       name: "Rizky Hasanuddin",
       action: " sent you a private message ",
-      time: "1 day ago",
+      time: "5 days ago",
       message: `Hello, thanks for
                 setting up the Chess Club. I've been a member for a few weeks now and
                 I'm already having lots of fun and improving my game.`,
@@ -86,9 +86,13 @@ $(document).ready(function () {
     let theNotification = document.createElement("div");
     theNotification.className = "the-notification";
 
+    let allTextContainer = document.createElement("span");
+    allTextContainer.className = "all-text-container";
+
     let userImgContainer = document.createElement("span");
     userImgContainer.className = "user-img-container";
     let userImage = document.createElement("img");
+    userImage.className = "user-image";
     userImage.setAttribute("src", notification.userImg.src);
     userImage.setAttribute("alt", `${notification.name} image`);
 
@@ -107,7 +111,7 @@ $(document).ready(function () {
 
     notificationTextContainer.appendChild(userName);
     notificationTextContainer.appendChild(notificationText);
-    theNotification.append(notificationTextContainer);
+    allTextContainer.append(notificationTextContainer);
 
     if (notification.post != null) {
       let postHeading = document.createElement("span");
@@ -115,6 +119,7 @@ $(document).ready(function () {
       postHeading.textContent = `${notification.post}`;
 
       notificationTextContainer.appendChild(postHeading);
+      allTextContainer.append(notificationTextContainer);
     }
 
     if (notification.group != null) {
@@ -123,7 +128,28 @@ $(document).ready(function () {
       groupName.textContent = `${notification.group}`;
 
       notificationTextContainer.appendChild(groupName);
+      allTextContainer.append(notificationTextContainer);
     }
+
+    if (notification.picture != null) {
+      let postImageContainer = document.createElement("div");
+      postImageContainer.className = "post-img-container";
+
+      let postImage = document.createElement("img");
+      postImage.className = "post-image";
+      postImage.setAttribute("src", notification.picture.src);
+      postImage.setAttribute("alt", "Your commented picture");
+
+      postImageContainer.append(postImage);
+      allTextContainer.append(notificationTextContainer);
+      theNotification.append(postImageContainer);
+    }
+
+    let notificationTime = document.createElement("div");
+    notificationTime.className = "notification-time";
+    notificationTime.textContent = `${notification.time}`;
+
+    notificationTextContainer.append(notificationTime);
 
     if (notification.message != null) {
       let privateMessage = document.createElement("div");
@@ -133,16 +159,7 @@ $(document).ready(function () {
       notificationTextContainer.appendChild(privateMessage);
     }
 
-    if (notification.picture != null) {
-      let postImageContainer = document.createElement("span");
-      postImageContainer.className = "post-img-container";
-
-      let postImage = document.createElement("img");
-      postImage.setAttribute("src", notification.picture.src);
-      postImage.setAttribute("alt", "Your commented picture");
-
-      notificationTextContainer.appendChild(postImage);
-    }
+    theNotification.append(allTextContainer);
 
     if (notification.read != false) {
       $(theNotification).addClass("read");
