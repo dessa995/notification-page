@@ -1,13 +1,25 @@
 @import "./mixins";
+@import "./variables";
 
 * {
+  font-family: CustomFont;
   box-sizing: border-box;
+}
+
+@font-face {
+  font-family: CustomFont;
+  src: url("../../assets/fonts/PlusJakartaSans-VariableFont_wght.ttf");
+  src: url("../../assets/fonts/plusjakartasans-variablefont_wght-webfont.woff")
+    format("woff");
+  src: url("../../assets/fonts/plusjakartasans-variablefont_wght-webfont.woff2")
+    format("woff2");
 }
 
 .page-container {
   margin: 80px;
   border-radius: 12px;
   max-width: 735px;
+  padding: 0px 20px;
   padding-bottom: 9px;
   @include autoMargin();
   @include flexCenter();
@@ -33,11 +45,12 @@
 
 .badge {
   font-size: 22px;
-  padding: 0px 15px;
-  margin: 25px 0px;
+  padding: 5px 15px;
+  align-self: center;
   color: aliceblue;
   background-color: rgb(40, 40, 165);
   border-radius: 6px;
+  font-weight: bold;
 }
 
 .num-of-notifications {
@@ -46,14 +59,21 @@
 
 .heading {
   font-size: 30px;
-  font-weight: bold;
+  font-weight: bolder;
   padding: 0 20px;
+  align-self: center;
 }
 
 .mark-as-read {
   display: inline-flex;
   line-height: 100%;
   padding: 27px 23px;
+  color: $text-color;
+  align-self: center;
+}
+
+.mark-as-read:hover {
+  cursor: pointer;
 }
 
 .notifications-container {
@@ -97,10 +117,19 @@
   }
 }
 
+// .unread-badge {
+//   display: inline-flex;
+//   order: 2;
+//   width: 10px;
+//   height: 10px;
+//   border-radius: 50%;
+//   background-color: #ff4944;
+// }
+
 .read:hover,
 .not-read:hover {
   cursor: pointer;
-  background-color: #1cd2d2b6;
+  background-color: #f2f2f2;
 }
 
 .user-img-container {
@@ -113,28 +142,28 @@
 }
 
 .user {
-  color: #272a32;
+  color: $username-color;
   font-weight: bold;
 }
 
 .notification-text {
-  color: #73777a;
+  color: $text-color;
 }
 
 .notification-link {
-  color: #494e57e3;
+  color: $post-link-color;
   font-weight: bold;
 }
 
 .chess-club-link {
-  color: #2d4a8d;
+  color: $group-color;
   font-weight: bold;
 }
 
 .notification-time {
   display: block;
   padding: 5px 0px;
-  color: #73777aaf;
+  color: $text-color;
 }
 
 .user-message {
@@ -143,7 +172,7 @@
   border: 1px solid rgba(59, 59, 59, 0.377);
   border-radius: 4px;
   max-width: 550px;
-  color: #73777a;
+  color: $text-color;
 }
 
 .post-image {

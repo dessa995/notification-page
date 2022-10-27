@@ -1,11 +1,19 @@
 * {
+  font-family: CustomFont;
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: CustomFont;
+  src: url("../../assets/fonts/PlusJakartaSans-VariableFont_wght.ttf");
+  src: url("../../assets/fonts/plusjakartasans-variablefont_wght-webfont.woff") format("woff");
+  src: url("../../assets/fonts/plusjakartasans-variablefont_wght-webfont.woff2") format("woff2");
+}
 .page-container {
   margin: 80px;
   border-radius: 12px;
   max-width: 735px;
+  padding: 0px 20px;
   padding-bottom: 9px;
   margin-left: auto;
   margin-right: auto;
@@ -34,11 +42,12 @@
 
 .badge {
   font-size: 22px;
-  padding: 0px 15px;
-  margin: 25px 0px;
+  padding: 5px 15px;
+  align-self: center;
   color: aliceblue;
   background-color: rgb(40, 40, 165);
   border-radius: 6px;
+  font-weight: bold;
 }
 
 .num-of-notifications {
@@ -47,14 +56,21 @@
 
 .heading {
   font-size: 30px;
-  font-weight: bold;
+  font-weight: bolder;
   padding: 0 20px;
+  align-self: center;
 }
 
 .mark-as-read {
   display: inline-flex;
   line-height: 100%;
   padding: 27px 23px;
+  color: #73777a;
+  align-self: center;
+}
+
+.mark-as-read:hover {
+  cursor: pointer;
 }
 
 .notifications-container {
@@ -104,7 +120,7 @@
 .read:hover,
 .not-read:hover {
   cursor: pointer;
-  background-color: rgba(28, 210, 210, 0.7137254902);
+  background-color: #f2f2f2;
 }
 
 .user-img-container {
@@ -138,7 +154,7 @@
 .notification-time {
   display: block;
   padding: 5px 0px;
-  color: rgba(115, 119, 122, 0.6862745098);
+  color: #73777a;
 }
 
 .user-message {

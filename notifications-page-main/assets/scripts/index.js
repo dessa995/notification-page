@@ -16,6 +16,8 @@ $(document).ready(function () {
   let postImg = new Image();
   postImg.src = "../assets/images/image-chess.webp";
 
+  let counter = 0;
+
   let notificationDiv = document.querySelector(".the-notification");
 
   let notificationsContainer = document.querySelector(
@@ -99,7 +101,7 @@ $(document).ready(function () {
     userImgContainer.appendChild(userImage);
     theNotification.append(userImgContainer);
 
-    let notificationTextContainer = document.createElement("span");
+    let notificationTextContainer = document.createElement("div");
     notificationTextContainer.className = "notification-text-span";
     let userName = document.createElement("span");
     userName.className = "user";
@@ -165,6 +167,12 @@ $(document).ready(function () {
       $(theNotification).addClass("read");
     } else {
       $(theNotification).addClass("not-read");
+      let redDot = document.createElement("div");
+      redDot.className = "unread-badge";
+      notificationTextContainer.append(redDot);
+      allTextContainer.append(notificationTextContainer);
+
+      console.log(redDot);
     }
 
     theNotification.addEventListener("click", function () {
@@ -176,8 +184,6 @@ $(document).ready(function () {
       }
     });
 
-    let counter = 0;
-
     function notificationCounter(count) {
       if (notification.read == false) {
         counter += 1;
@@ -186,6 +192,25 @@ $(document).ready(function () {
       }
     }
     notificationCounter();
+
+    theNotification.addEventListener("click", () => {
+      if (notification.read == false) {
+        notification.read = true;
+        counter -= 1;
+        document.getElementById("NotificationBadge").innerHTML = counter;
+        console.log(notification.read);
+      }
+    });
+
+    let readAll = document.querySelector(".mark-as-read");
+
+    readAll.addEventListener("click", function () {
+      if ($(theNotification).hasClass("not-read")) {
+        $(theNotification).removeClass("not-read").addClass("read");
+        counter = 0;
+        document.getElementById("NotificationBadge").innerHTML = counter;
+      }
+    });
 
     notificationsContainer.append(theNotification);
   });
