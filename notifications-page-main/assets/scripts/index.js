@@ -88,7 +88,7 @@ $(document).ready(function () {
     let theNotification = document.createElement("div");
     theNotification.className = "the-notification";
 
-    let allTextContainer = document.createElement("span");
+    let allTextContainer = document.createElement("div");
     allTextContainer.className = "all-text-container";
 
     let userImgContainer = document.createElement("span");
@@ -151,14 +151,14 @@ $(document).ready(function () {
     notificationTime.className = "notification-time";
     notificationTime.textContent = `${notification.time}`;
 
-    notificationTextContainer.append(notificationTime);
+    allTextContainer.append(notificationTime);
 
     if (notification.message != null) {
       let privateMessage = document.createElement("div");
       privateMessage.className = "user-message";
       privateMessage.textContent = `${notification.message}`;
 
-      notificationTextContainer.appendChild(privateMessage);
+      allTextContainer.appendChild(privateMessage);
     }
 
     theNotification.append(allTextContainer);

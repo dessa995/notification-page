@@ -104,17 +104,19 @@
 .not-read {
   background-color: rgba(210, 234, 252, 0.4117647059);
 }
-.not-read .all-text-container::before {
-  content: "";
-  display: inline;
-  order: 1;
+
+.notification-text-span {
+  gap: 4px;
+}
+
+.unread-badge {
+  display: inline-flex;
+  order: 2;
   width: 10px;
   height: 10px;
   border-radius: 50%;
   background-color: #ff4944;
-  margin-right: -20px;
-  margin-bottom: -15px;
-  align-self: flex-end;
+  margin-left: 4px;
 }
 
 .read:hover,
@@ -153,6 +155,7 @@
 
 .notification-time {
   display: block;
+  order: -1;
   padding: 5px 0px;
   color: #73777a;
 }
@@ -161,6 +164,7 @@
   display: block;
   padding: 5px 0px;
   border: 1px solid rgba(59, 59, 59, 0.377);
+  order: -2;
   border-radius: 4px;
   max-width: 550px;
   color: #73777a;
