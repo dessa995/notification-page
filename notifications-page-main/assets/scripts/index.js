@@ -178,6 +178,8 @@ $(document).ready(function () {
     theNotification.addEventListener("click", function () {
       if ($(theNotification).hasClass("not-read")) {
         $(theNotification).removeClass("not-read").addClass("read");
+        let redDot = document.querySelector(".unread-badge")
+        $(redDot).removeClass("unread-badge").addClass("read-badge")
         window.open("testpage.html", "_blank");
       } else {
         window.open("testpage.html", "_blank");

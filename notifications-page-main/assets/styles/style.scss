@@ -133,6 +133,10 @@
   margin-left: 4px;
 }
 
+.read-badge {
+  display: none;
+}
+
 .read:hover,
 .not-read:hover {
   cursor: pointer;
