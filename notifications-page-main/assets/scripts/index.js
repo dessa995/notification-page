@@ -178,8 +178,8 @@ $(document).ready(function () {
     theNotification.addEventListener("click", function () {
       if ($(theNotification).hasClass("not-read")) {
         $(theNotification).removeClass("not-read").addClass("read");
-        let redDot = document.querySelector(".unread-badge")
-        $(redDot).removeClass("unread-badge").addClass("read-badge")
+        let redDot = document.querySelector(".unread-badge");
+        redDot.remove();
         window.open("testpage.html", "_blank");
       } else {
         window.open("testpage.html", "_blank");
@@ -207,10 +207,12 @@ $(document).ready(function () {
     let readAll = document.querySelector(".mark-as-read");
 
     readAll.addEventListener("click", function () {
+      let redDot = document.querySelector(".unread-badge");
       if ($(theNotification).hasClass("not-read")) {
         $(theNotification).removeClass("not-read").addClass("read");
         counter = 0;
         document.getElementById("NotificationBadge").innerHTML = counter;
+        redDot.remove();
       }
     });
 
